@@ -159,6 +159,15 @@ var options = {
     new CopyWebpackPlugin({
       patterns: [
         {
+          from: 'src/google-analytics.js',
+          to: path.join(__dirname, 'build/'),
+          force: true,
+        },
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
           from: 'src/assets/',
           to: path.join(__dirname, 'build/assets'),
           force: true,

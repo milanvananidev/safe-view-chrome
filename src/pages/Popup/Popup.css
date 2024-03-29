@@ -1,0 +1,52 @@
+* {
+    background-color: #fff;
+}
+
+.container {
+    width: 320px;
+    height: 420px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    width: 65%;
+}
+
+.site-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.favicon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.title {
+    font-size: 15px;
+    margin-top: 20px;
+    padding: 0px 5%;
+    text-align: center;
+    line-height: 150%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+
+button {
+    background-color: #10151c;
+    padding: 20px 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 18px;
+}

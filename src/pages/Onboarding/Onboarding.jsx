@@ -4,16 +4,20 @@ import './Onboarding.css';
 import Slide1 from './Slides/Slide1';
 import Slide2 from './Slides/Slide2';
 
+import googleAnalytics from '../../google-analytics';
+
 const Onboarding = () => {
 
     const [slide, setSlide] = useState(1);
 
     const handleIncognito = () => {
-
+        chrome.tabs.create({
+            url: "chrome://extensions/?id=" + chrome.runtime.id,
+        });
     }
 
     const handleEventCall = (value) => {
-        alert(value)
+        googleAnalytics.fireEvent(value);
         setSlide(3)
     }
 

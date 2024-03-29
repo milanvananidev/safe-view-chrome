@@ -1209,6 +1209,9 @@ const checkPage = () => {
                     const WHITELIST_WEBSITES = info1.whiteList.websites
                     const WHITELIST_KEYWORDS = info1.whiteList.keywords
 
+
+
+                    console.log(info1?.blockList?.websites)
                     const WHITELIST_SWITCH_STATUS = true;
 
                     let checking_complete = false
@@ -1216,7 +1219,7 @@ const checkPage = () => {
 
                     if (WHITELIST_SWITCH_STATUS) {
                         for (let i = 0; i < WHITELIST_WEBSITES.length; i++) {
-                            const name = Object.values(WHITELIST_WEBSITES[i])[0]
+                            const name = WHITELIST_WEBSITES[i]
                             if (CURRENT_PAGE_URL_1.includes(name)) {
                                 checking_complete = true
                                 break
@@ -1230,7 +1233,7 @@ const checkPage = () => {
                         })
                     } else {
                         for (let i = 0; i < BLOCKLIST_WEBSITES.length; i++) {
-                            const name = Object.values(BLOCKLIST_WEBSITES[i])[0]
+                            const name = BLOCKLIST_WEBSITES[i]
                             if (CURRENT_PAGE_URL_1.includes(name)) {
                                 checking_complete = true
                                 reason = name

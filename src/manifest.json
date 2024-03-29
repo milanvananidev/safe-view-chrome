@@ -17,9 +17,8 @@
     "<all_urls>"
   ],
   "action": {
-    "default_title": "Hello World",
-    "default_icon": "/assets/icon48.png",
-    "default_popup": "popup.html"
+    "default_title": "Safe View - Adult Sites Blocker",
+    "default_icon": "/assets/icon128.png"
   },
   "background": {
     "service_worker": "background.js"
