@@ -16,6 +16,11 @@
     background-repeat: no-repeat;
 }
 
+.image {
+    height: 100px;
+    margin-bottom: 30px;
+}
+
 .full-screen-container h1 {
     font-size: 54px;
     color: var(--themeDark)

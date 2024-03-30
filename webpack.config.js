@@ -41,6 +41,7 @@ var options = {
     popup: path.join(__dirname, 'src', 'pages', 'Popup', 'index.jsx'),
     onboarding: path.join(__dirname, 'src', 'pages', 'Onboarding', 'index.jsx'),
     blocked: path.join(__dirname, 'src', 'pages', 'Blocked', 'index.jsx'),
+    dashboard: path.join(__dirname, 'src', 'pages', 'Dashboard', 'index.jsx'),
     background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
     start: path.join(__dirname, 'src', 'pages', 'Content', 'start.js'),
     end: path.join(__dirname, 'src', 'pages', 'Content', 'end.js'),
@@ -184,6 +185,12 @@ var options = {
       template: path.join(__dirname, 'src', 'pages', 'Onboarding', 'index.html'),
       filename: 'onboarding.html',
       chunks: ['onboarding'],
+      cache: false,
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'pages', 'Dashboard', 'index.html'),
+      filename: 'dashboard.html',
+      chunks: ['dashboard'],
       cache: false,
     }),
     new HtmlWebpackPlugin({

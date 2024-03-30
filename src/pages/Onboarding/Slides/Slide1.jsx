@@ -6,6 +6,9 @@ const Slide1 = (props) => {
     return (
         <>
             <div className='full-screen-container'>
+
+                <img src={props.image} className='image' draggable={false} />
+
                 <h1 className='poppins-bold'>{props.title}</h1>
                 <p className='poppins-medium'>{props.description}</p>
 

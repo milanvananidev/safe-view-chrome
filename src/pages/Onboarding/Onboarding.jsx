@@ -4,6 +4,9 @@ import './Onboarding.css';
 import Slide1 from './Slides/Slide1';
 import Slide2 from './Slides/Slide2';
 
+import Logo from '../../assets/icon128.png'
+import Incognito from '../../assets/icons/private.png'
+
 import googleAnalytics from '../../google-analytics';
 
 const Onboarding = () => {
@@ -24,6 +27,7 @@ const Onboarding = () => {
     if (slide === 1) {
         return (
             <Slide1
+                image={Logo}
                 title={'Welcome to Safe View'}
                 description={'the ultimate guardian of your digital experience.'}
                 buttonText={"Let's Start"}
@@ -41,6 +45,7 @@ const Onboarding = () => {
     if (slide === 3) {
         return (
             <Slide1
+                image={Incognito}
                 title={'Allow In Incognito'}
                 description={'allow Safe View to operate in incognito mode.'}
                 buttonText={"Enable Now"}
