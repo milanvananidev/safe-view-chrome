@@ -1,0 +1,33 @@
+::root {
+    --themeDark: #10151c;
+}
+
+.full-screen-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/onboarding-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.full-screen-container h1 {
+    font-size: 54px;
+    color: var(--themeDark)
+}
+
+.full-screen-container p {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.excerise-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0% 5%;
+    margin-top: 60px;
+}

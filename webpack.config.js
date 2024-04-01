@@ -45,6 +45,10 @@ var options = {
     background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
     start: path.join(__dirname, 'src', 'pages', 'Content', 'start.js'),
     end: path.join(__dirname, 'src', 'pages', 'Content', 'end.js'),
+
+    // all exercise
+
+    breathing: path.join(__dirname, 'src', 'pages', 'BreathingExercise', 'index.jsx')
   },
   chromeExtensionBoilerplate: {
     notHotReload: ['background', 'contentScript', 'devtools'],
@@ -124,6 +128,18 @@ var options = {
         ],
         exclude: /node_modules/,
       },
+      {
+        test: /\.(mp4)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'videos/', // This determines the location the file is copied to after being processed by webpack
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
@@ -199,6 +215,15 @@ var options = {
       chunks: ['blocked'],
       cache: false,
     }),
+
+    // all exercises
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'pages', 'BreathingExercise', 'index.html'),
+      filename: 'breathing.html',
+      chunks: ['breathing'],
+      cache: false,
+    }),
+
   ].filter(Boolean),
   infrastructureLogging: {
     level: 'info',
