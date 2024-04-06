@@ -8,8 +8,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-
     background-image: url('../../assets/onboarding-background.png');
     background-size: cover;
     background-position: center;
@@ -18,6 +16,7 @@
 
 .image {
     height: 100px;
+    width: 100px;
     margin-bottom: 30px;
 }
 
@@ -35,4 +34,16 @@
     height: 20px;
     margin-bottom: 20px;
     cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.questions-title {
+    max-width: 900px;
+
 }

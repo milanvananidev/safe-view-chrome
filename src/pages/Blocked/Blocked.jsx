@@ -6,9 +6,6 @@ import ExerciseCard from '../Components/ExerciseCard';
 import YogaIcon from '../../assets/icons/yoga.png';
 import GameIcon from '../../assets/icons/joystick.png';
 
-// Deep Breathing Exercise
-// Random Game - Next Release
-
 const Blocked = () => {
 
     const currentURL = new URL(window.location.href);

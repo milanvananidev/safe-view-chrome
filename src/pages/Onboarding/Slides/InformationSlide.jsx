@@ -2,10 +2,10 @@ import React from 'react'
 import '../Onboarding.css'
 import ThemeButton from '../../Components/ThemeButton'
 
-const Slide1 = (props) => {
+const InformationSlide = (props) => {
     return (
         <>
-            <div className='full-screen-container'>
+            <div>
 
                 <img src={props.image} className='image' draggable={false} />
 
@@ -18,4 +18,4 @@ const Slide1 = (props) => {
     )
 }
 
-export default Slide1
+export default InformationSlide
