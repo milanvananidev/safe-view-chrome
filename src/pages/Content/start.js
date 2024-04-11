@@ -1209,9 +1209,6 @@ const checkPage = () => {
                     const WHITELIST_WEBSITES = info1.whiteList.websites
                     const WHITELIST_KEYWORDS = info1.whiteList.keywords
 
-
-
-                    console.log(info1?.blockList?.websites)
                     const WHITELIST_SWITCH_STATUS = true;
 
                     let checking_complete = false
@@ -1227,11 +1224,14 @@ const checkPage = () => {
                         }
                     }
 
+                    // If current url is in the whitelist then do not block it.
                     if (checking_complete) {
                         resolve({
                             block: false
                         })
                     } else {
+
+                        // Check for user added block list
                         for (let i = 0; i < BLOCKLIST_WEBSITES.length; i++) {
                             const name = BLOCKLIST_WEBSITES[i]
                             if (CURRENT_PAGE_URL_1.includes(name)) {
@@ -1240,6 +1240,7 @@ const checkPage = () => {
                                 break
                             }
                         }
+
                         if (checking_complete) {
                             // block
                             resolve({
@@ -1269,7 +1270,7 @@ const checkPage = () => {
                                     category: "website"
                                 })
                             } else {
-                                if (CURRENT_PAGE_URL_2.includes('funswitch') || CURRENT_PAGE_URL_2.includes('blockerx') || CURRENT_PAGE_URL_2.includes('atmana')) {
+                                if (CURRENT_PAGE_URL_2.includes('safe-view')) {
                                     resolve({
                                         block: false
                                     })
@@ -1315,7 +1316,7 @@ const checkPage = () => {
                                             document.addEventListener("DOMContentLoaded", () => {
                                                 let CURRENT_PAGE_DOM = document.documentElement.innerHTML.toLowerCase().replace(/[`~ !@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/g, "");
 
-                                                if (CURRENT_PAGE_DOM.includes('funswitch') || CURRENT_PAGE_DOM.includes('blockerx') || CURRENT_PAGE_DOM.includes('atmana')) {
+                                                if (CURRENT_PAGE_DOM.includes('safe-view')) {
                                                     // no blocking
                                                     resolve({
                                                         block: false
@@ -1395,11 +1396,35 @@ const checkPage = () => {
 }
 
 const checkForBlocking = async () => {
-    const result = await checkPage();
+    const RESULT = await checkPage();
 
-    if (result.block) {
-        const appId = chrome.runtime.id
-        window.open(`chrome-extension://${appId}/blocked.html?url=${result.url}`, "_self")
+    if (RESULT.block) {
+        chrome.storage.local.get(['todayBrowseInfo']).then((data) => {
+
+            const STATISTICS = data.todayBrowseInfo
+
+            try {
+                if (STATISTICS[extractDomain(RESULT.url)] === undefined) {
+                    STATISTICS[extractDomain(RESULT.url)] = {
+                        status: 'active',
+                        totalTime: 0,
+                        lastOpenTime: new Date().getTime(),
+                        symbol: 'blocked'
+                    }
+                } else {
+                    STATISTICS[extractDomain(RESULT.url)].symbol = 'blocked'
+                }
+                chrome.storage.local.set({
+                    todayBrowseInfo: STATISTICS
+                });
+            } catch {
+            }
+            try {
+                const appId = chrome.runtime.id
+                window.open(`chrome-extension://${appId}/blocked.html?url=${RESULT.url}`, "_self")
+            } catch {
+            }
+        })
     }
 }
 
@@ -1445,3 +1470,13 @@ const checkSearch = () => {
 };
 
 checkSearch();
+
+const extractDomain = (url) => {
+    let re = /:\/\/(www\.)?(.+?)\//;
+    try {
+        return url.match(re)[2];
+    }
+    catch (errN1) {
+        return "empty";
+    }
+}

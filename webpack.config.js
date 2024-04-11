@@ -128,18 +128,6 @@ var options = {
         ],
         exclude: /node_modules/,
       },
-      {
-        test: /\.(mp4)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'videos/', // This determines the location the file is copied to after being processed by webpack
-            },
-          },
-        ],
-      },
     ],
   },
   resolve: {
