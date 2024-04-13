@@ -47,7 +47,6 @@ var options = {
     end: path.join(__dirname, 'src', 'pages', 'Content', 'end.js'),
 
     // all exercise
-
     breathing: path.join(__dirname, 'src', 'pages', 'BreathingExercise', 'index.jsx')
   },
   chromeExtensionBoilerplate: {
@@ -84,10 +83,6 @@ var options = {
         test: new RegExp('.(' + fileExtensions.join('|') + ')$'),
         type: 'asset/resource',
         exclude: /node_modules/,
-        // loader: 'file-loader',
-        // options: {
-        //   name: '[name].[ext]',
-        // },
       },
       {
         test: /\.html$/,

@@ -18,7 +18,8 @@
   ],
   "action": {
     "default_title": "Safe View - Adult Sites Blocker",
-    "default_icon": "/assets/icon128.png"
+    "default_icon": "/assets/logo-white-bg.png",
+    "default_popup": "popup.html"
   },
   "background": {
     "service_worker": "background.js"

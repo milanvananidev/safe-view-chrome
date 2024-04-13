@@ -24,8 +24,8 @@
 }
 
 .favicon {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 
@@ -40,13 +40,13 @@
     word-break: break-word;
 }
 
-
 button {
-    background-color: #10151c;
-    padding: 20px 50px;
+    background-color: #038175;
+    width: 80%;
+    height: 50px;
     border: none;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 10px;
     color: #fff;
     font-size: 18px;
 }

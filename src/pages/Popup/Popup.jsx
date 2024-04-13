@@ -40,7 +40,8 @@ const Popup = () => {
     checkCanBlock();
   }, []);
 
-  const addSiteToBlock = async () => {
+  const addSiteToBlock = async (e) => {
+    e.preventDefault();
     const storage = await getDataFromStorage();
     let blockListWebsites = storage.data.blockList.websites;
 
@@ -59,16 +60,26 @@ const Popup = () => {
     });
   }
 
+  const viewBlockList = (e) => {
+    e.preventDefault();
+
+    let id = chrome.runtime.id
+    chrome.tabs.create({ url: `chrome-extension://${id}/dashboard.html` })
+  }
+
   return (
     <div className='container'>
       {canBlock && <img src={Logo} className='logo' draggable={false} /> || null}
 
       <div className='site-info'>
         <img src={favIconUrl} className='favicon' draggable={false} />
-        <h4 className='title poppins-bold'>{pageTitle}</h4>
+        <h4 className='title poppins-semibold'>{pageTitle}</h4>
       </div>
 
-      {canBlock && <button className='button poppins-bold' onClick={addSiteToBlock} >{'Add to blocklist'}</button> || null}
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%', gap: 10 }}>
+        {canBlock && <button className='button poppins-bold' onClick={addSiteToBlock} >{'Add to blocklist'}</button> || null}
+        {canBlock && <button className='button poppins-bold' onClick={viewBlockList} >{'View blocklist'}</button> || null}
+      </div>
     </div>
   )
 }
