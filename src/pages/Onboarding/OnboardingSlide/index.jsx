@@ -8,7 +8,7 @@ import HeaderImage from '../../../assets/onboarding.png'
 
 const OnbardingSlide = ({ title, subtitle, questions, onsubmit }) => {
 
-    const [selectedQuestion, setSelectedQuestion] = useState(questions[0].value);
+    const [selectedQuestion, setSelectedQuestion] = useState('');
 
     const onChange = (value) => {
         setSelectedQuestion(value)
@@ -16,6 +16,10 @@ const OnbardingSlide = ({ title, subtitle, questions, onsubmit }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (selectedQuestion === '') {
+            return alert('Please select one option to continue')
+        }
 
         onsubmit(selectedQuestion);
     }
