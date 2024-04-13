@@ -1,0 +1,34 @@
+.inc-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #038175;
+    color: #fff;
+}
+
+.title {
+    font-size: 60px;
+}
+
+.subtitle {
+    font-size: 50px;
+}
+
+.image {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.button {
+    font-size: 25px;
+    background-color: #fff;
+    color: #038175;
+    border: 0;
+    padding: 15px 50px;
+    border-radius: 50px;
+    margin-top: 50px;
+    cursor: pointer;
+}

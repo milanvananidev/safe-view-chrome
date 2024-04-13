@@ -17,12 +17,12 @@
     height: 30px;
     width: 30px;
     background-color: #eee;
-    border: 1px solid #10151c;
+    border: 1px solid #038175;
     border-radius: 10px;
 }
 
 .custom-checkbox-input:checked~.custom-checkbox-checkmark {
-    background-color: #10151c;
+    background-color: #038175;
 }
 
 .custom-checkbox-checkmark:after {

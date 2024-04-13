@@ -1,0 +1,80 @@
+.onboarding-container {
+    height: 100vb;
+    width: 100%;
+    display: flex;
+}
+
+.onboarding-info {
+    width: 40%;
+    background-color: #038175;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+    margin: 30px;
+}
+
+.info-sub-heading {
+    font-size: 40px;
+    color: #fff;
+    margin-left: 30px;
+}
+
+.info-heading {
+    font-size: 60px;
+    color: #fff;
+    line-height: 125%;
+    margin: 30px;
+}
+
+.oboarding-header {
+    width: 80%;
+    margin-left: 30px;
+}
+
+/* ======== Right Side Start =========  */
+
+.onboarding-slides {
+    padding: 30px;
+    margin-right: 60px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide-sub-heading {
+    color: #038175;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.slide-heading {
+    color: #000;
+    font-size: 35px;
+}
+
+.questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.next-button {
+    font-size: 25px;
+    background-color: #038175;
+    color: #fff;
+    border: 0;
+    padding: 15px 50px;
+    border-radius: 50px;
+    margin-top: 50px;
+    cursor: pointer;
+    align-self: flex-start;
+}
