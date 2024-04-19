@@ -1,11 +1,37 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .breathing-container {
     height: 100vh;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #038175;
+}
+
+.center-static {
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-animation {
+    background-color: #73c5bd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 4s, height 4s;
+}
+
+#breathing-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #038175;
+    z-index: 999;
 }

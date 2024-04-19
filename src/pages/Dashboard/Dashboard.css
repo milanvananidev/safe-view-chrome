@@ -1,0 +1,53 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    background-color: #F3F2F7;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100%;
+    background-color: #FFF;
+    padding: 40px;
+}
+
+.logo {
+    width: 70%;
+}
+
+.option-container {
+    margin-top: 40px;
+}
+
+.option-button {
+    height: 54px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.option-text {
+    font-size: 15px;
+}
+
+.option-icon {
+    height: 25px;
+    margin-right: 10px;
+}
+
+.selected {
+    background-color: rgba(0, 176, 116, 0.15);
+    color: #038175;
+    font-weight: 700;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
